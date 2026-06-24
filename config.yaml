@@ -1,0 +1,29 @@
+# ROSE GUARD Configuration
+# Enhanced security testing tool configuration
+
+wordlist: "wordlists/demo_wordlist.txt"
+
+brute_force:
+  max_length: 4
+  charset: "abcdefghijklmnopqrstuvwxyz0123456789!@#$%"
+  timeout: 300  # 5 minutes maximum
+
+hashing:
+  bcrypt_rounds: 4        # Low for demo purposes - production should use 12+
+  argon2_time_cost: 1     # Low for demo purposes
+
+performance:
+  batch_size: 1000
+  progress_update_interval: 100
+  enable_caching: true
+
+security:
+  require_ethics_consent: true
+  mask_passwords_in_logs: true
+  demo_mode: true
+  max_attempts_per_second: 10000
+
+reporting:
+  export_format: "csv"
+  generate_charts: true
+  detailed_metrics: true
